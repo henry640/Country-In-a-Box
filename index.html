@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Country in a Box - Experience the World, One Bite at a Time!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-box-open"></i>
+                <span>Country in a Box</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Experience the World, One Bite at a Time!</h1>
+            <p class="hero-subtitle">Bringing the flavors of the world straight to your table</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#about" class="btn btn-secondary">Our Story</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <div class="container">
+            <div class="section-header">
+                <h2>Welcome to Country in a Box!</h2>
+                <p>Get ready to travel the world one delicious bite at a time. From your favorite Filipino classics to exciting international flavors, we deliver joy and flavor straight to your table!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section class="menu-highlights">
+        <div class="container">
+            <h2 class="section-title">Menu Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card" data-category="breakfast">
+                    <div class="highlight-icon"><i class="fas fa-coffee"></i></div>
+                    <h3>Breakfast Boxes</h3>
+                    <p>Discover your favorite morning meals from around the world!</p>
+                </div>
+                <div class="highlight-card" data-category="filipino">
+                    <div class="highlight-icon"><i class="fas fa-award"></i></div>
+                    <h3>Filipino Favorites</h3>
+                    <p>Classic Tapsilugan meals that are made affordable and satisfying.</p>
+                </div>
+                <div class="highlight-card" data-category="international">
+                    <div class="highlight-icon"><i class="fas fa-globe"></i></div>
+                    <h3>International Flavors</h3>
+                    <p>Try dishes from Japan, Italy, Mexico, India, Korea, and more!</p>
+                </div>
+                <div class="highlight-card" data-category="family">
+                    <div class="highlight-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Family Super Boxes</h3>
+                    <p>Perfect for sharing – mix and match global flavors for the whole family.</p>
+                </div>
+                <div class="highlight-card" data-category="snacks">
+                    <div class="highlight-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h3>Snacks & Sides</h3>
+                    <p>Small bites from here and abroad to pair with your meals.</p>
+                </div>
+                <div class="highlight-card" data-category="desserts">
+                    <div class="highlight-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Desserts & Drinks</h3>
+                    <p>Sweet treats and beverages from multiple countries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Our Full Menu</h2>
+            <p class="section-subtitle">Our menu brings the whole world to your table, making every meal a fun cultural adventure!</p>
+            
+            <!-- Search and Filter -->
+            <div class="menu-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search for dishes...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="asian">Asian</button>
+                    <button class="filter-btn" data-filter="filipino">Filipino</button>
+                    <button class="filter-btn" data-filter="european">European</button>
+                    <button class="filter-btn" data-filter="american">American</button>
+                    <button class="filter-btn" data-filter="snacks">Snacks</button>
+                    <button class="filter-btn" data-filter="drinks">Drinks</button>
+                    <button class="filter-btn" data-filter="desserts">Desserts</button>
+                    <button class="filter-btn" data-filter="family">Family Boxes</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <!-- Hero Story -->
+            <div class="about-hero">
+                <h2 class="section-title">Our Story</h2>
+                <p class="about-subtitle">A Culinary Journey Around The World</p>
+            </div>
+
+            <!-- Main Story Grid -->
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3 class="about-heading">From Passion to Plate</h3>
+                    <p>Country in a Box was born from a simple yet powerful idea: what if you could travel the world through food without leaving your home? Founded in the heart of the Philippines, we started with a passion for authentic Filipino comfort food and an insatiable curiosity about the diverse culinary traditions that make our world so rich and flavorful.</p>
+                    <p>We noticed something special happening at Filipino family tables – the joy of sharing meals, the stories told over steaming plates, and the way food brings generations together. We wanted to preserve that warmth and connection while opening doors to new experiences.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=800&fit=crop" alt="Gourmet Food Presentation" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Philosophy Section -->
+            <div class="about-philosophy">
+                <div class="philosophy-content">
+                    <h3 class="about-heading">Our Philosophy</h3>
+                    <p class="philosophy-quote">"Every dish tells a story. From the bustling streets of Tokyo to the aromatic kitchens of India, from the pasta houses of Italy to the taco stands of Mexico – we bring authentic flavors to your table with respect, passion, and care."</p>
+                </div>
+            </div>
+
+            <!-- Values Grid -->
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-number">01</div>
+                    <h4>Authenticity</h4>
+                    <p>Every recipe is crafted with respect for its cultural roots, using traditional techniques and quality ingredients.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">02</div>
+                    <h4>Quality</h4>
+                    <p>We source the finest ingredients and maintain rigorous standards to ensure exceptional taste in every bite.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">03</div>
+                    <h4>Accessibility</h4>
+                    <p>World-class cuisine shouldn't be exclusive. We make authentic international flavors affordable for everyone.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">04</div>
+                    <h4>Innovation</h4>
+                    <p>While honoring tradition, we continuously explore new flavors and create exciting culinary experiences.</p>
+                </div>
+            </div>
+
+            <!-- Mission & Vision Redesigned -->
+            <div class="mission-vision">
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To deliver affordable, delicious, and high-quality meals that celebrate both Filipino favorites and international cuisine, making every meal an adventure.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading family-friendly food brand in the Philippines, known for creativity, flavor, and customer joy.</p>
+                </div>
+            </div>
+
+            <!-- Achievement Stats -->
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">63</div>
+                    <div class="stat-label">Signature Dishes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Countries Represented</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Authentic Recipes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Philippines</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@countryinabox.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon - Sun: 8:00 AM - 9:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₱0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">
+                <i class="fas fa-check"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Menu Item Modal -->
+    <div class="menu-modal-overlay" id="menuModalOverlay" onclick="closeMenuModal()"></div>
+    <div class="menu-modal" id="menuModal">
+        <button class="close-modal" onclick="closeMenuModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="menu-modal-content">
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-details">
+                <h2 id="modalTitle"></h2>
+                <span id="modalCountry" class="modal-country"></span>
+                <p id="modalCategory" class="modal-category"></p>
+                <div class="modal-preparation">
+                    <h3>Preparation</h3>
+                    <p id="modalPreparation"></p>
+                </div>
+                <div class="modal-footer">
+                    <span id="modalPrice" class="modal-price"></span>
+                    <button class="btn btn-primary" onclick="addToCartFromModal()">
+                        <i class="fas fa-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Country in a Box</h4>
+                    <p>Experience the World, One Bite at a Time!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <ul>
+                        <li>Monday - Sunday</li>
+                        <li>8:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Country in a Box. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal-overlay" id="checkoutModalOverlay" onclick="closeCheckoutModal()"></div>
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-modal-content">
+            <h3>Order Summary:</h3>
+            <div id="checkoutItems" class="checkout-items"></div>
+            <div class="checkout-total" id="checkoutTotal"></div>
+            <p class="checkout-message">Your food will be delivered shortly.</p>
+            <button class="btn btn-primary" onclick="closeCheckoutModal()">OK</button>
+        </div>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div class="thankyou-modal-overlay" id="thankyouModalOverlay" onclick="closeThankYouModal()"></div>
+    <div class="thankyou-modal" id="thankyouModal">
+        <div class="thankyou-modal-content">
+            <div class="heart-emoji">❤️</div>
+            <h2>Thank You!</h2>
+            <button class="btn btn-primary" onclick="closeThankYouModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="menuData.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
